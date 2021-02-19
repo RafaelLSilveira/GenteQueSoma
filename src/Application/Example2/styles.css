@@ -1,0 +1,44 @@
+.app {
+  text-align: center;
+  padding: 50px;
+  background-color: #eee;
+}
+
+.list {
+  list-style: none;
+}
+
+.button {
+  margin: 5px;
+}
+
+.icon {
+  margin: 5px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.cancelIcon {
+  color: red;
+}
+
+.completeIcon {
+  color: green;
+}
+
+.addIcon {
+  color: blue;
+}
+
+.listTitle {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.listItemCompleted {
+  text-decoration: line-through;
+}
+
+.title {
+  color: blue;
+}
