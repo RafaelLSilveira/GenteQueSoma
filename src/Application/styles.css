@@ -21,6 +21,15 @@ html {
 
 .button {
   margin: 5px;
+  background-color: rgb(0, 38, 255);
+  border: none;
+  color: white;
+  padding: 5px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .icon {
@@ -53,4 +62,19 @@ html {
 
 .title {
   color: blue;
+}
+
+.count {
+  position: absolute;
+  float: left;
+}
+
+.nameInput {
+  font-size: 16px;
+  font-size: max(16px, 1em);
+  font-family: inherit;
+  padding: 0.25em 0.5em;
+  background-color: #fff;
+  border: 2px solid var(--input-border);
+  border-radius: 4px;
 }

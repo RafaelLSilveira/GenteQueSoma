@@ -3,8 +3,9 @@ import ListItems from '../Components/ListItems'
 import './styles.css'
 
 function Application() {
-  const [id, setId] = useState(2)
+  const [id, setId] = useState(3)
   const [name, setName] = useState('')
+  const [listCount, setListCount] = useState(3)
   const [listNames, setListNames] = useState(() => {
     const initialState = [
       { id: 1, title: 'Aprender React', completed: false },
@@ -19,17 +20,10 @@ function Application() {
     console.warn('Documento foi iniciado.')
   }, [])
 
-  // onChangeValue
+  // onChangeValue of list
   useEffect(() => {
-    console.warn(`Mudou a lista : ${listNames}`)
+    setListCount(listNames.length)
   }, [listNames])
-
-  // componentWillUmmount
-  useEffect(() => {
-    return (
-      console.warn('Desmontando componente.')
-    )
-  }, [])
 
   // Functions
   const handleAdd = () => {
@@ -38,10 +32,13 @@ function Application() {
       title: name,
       completed: false
     }
-
-    setListNames([...listNames, newItem])
-    setName('')
-    setId(id + 1)
+    if(name) {
+      setListNames([...listNames, newItem])
+      setName('')
+      setId(id + 1)
+    } else {
+      alert('Não é possível adicionar um item vazio!')
+    }
   }
 
   const handleDelete = (id) => {
@@ -71,6 +68,7 @@ function Application() {
           listNames.map((item) => {
             return (
               <ListItems
+                key={item.id}
                 item={item}
                 handleDelete={handleDelete}
                 handleComplete={handleComplete}
@@ -79,6 +77,7 @@ function Application() {
           })
         }
       </ul>
+      <label className="count">N° de Registros: {listCount}</label>
     </div>
   )
 }
