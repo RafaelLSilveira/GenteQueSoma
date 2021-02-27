@@ -1,5 +1,10 @@
 # TO DO LIST
-To Do List where is possible: insert items, remove items and check as concluded.
+To Do List where is possible:
+  >Insert items;
+  
+  > Remove items;
+  
+  > Check as concluded.
 
 ## Interface
 ![]()
