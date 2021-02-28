@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import ListItems from '../Components/ListItems'
+import useInput from '../Hooks/useInput'
+
 import './styles.css'
 
 function Application() {
   const [id, setId] = useState(3)
-  const [name, setName] = useState('')
+  const name = useInput()
   const [listCount, setListCount] = useState(3)
   const [listNames, setListNames] = useState(() => {
     const initialState = [
@@ -15,26 +17,30 @@ function Application() {
     return initialState
   })
 
-  // componentDidMount / componentWillMount
   useEffect(() => {
     console.warn('Documento foi iniciado.')
+    document.title = 'Lista de Tarefas'
   }, [])
 
-  // onChangeValue of list
   useEffect(() => {
     setListCount(listNames.length)
   }, [listNames])
 
   // Functions
   const handleAdd = () => {
+    const {
+      value,
+      onChange
+    } = name
+
     const newItem = {
       id: id + 1,
-      title: name,
+      title: value,
       completed: false
     }
-    if(name) {
+    if (value) {
       setListNames([...listNames, newItem])
-      setName('')
+      onChange()
       setId(id + 1)
     } else {
       alert('Não é possível adicionar um item vazio!')
@@ -61,7 +67,7 @@ function Application() {
   return (
     <div className="content">
       <h1 className="title">Minha Lista de Tarefas</h1>
-      <input className="nameInput" type="text" placeholder="Insira sua tarefa aqui" value={name} onChange={(event) => setName(event.target.value)} />
+      <input className="nameInput" type="text" placeholder="Insira sua tarefa aqui" {...name} />
       <button className="button" onClick={handleAdd}>Adicionar</button>
       <ul className="list">
         {

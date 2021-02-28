@@ -15,14 +15,14 @@
     "eslint-plugin-import": "^2.x",
     "eslint-plugin-jsx-a11y": "^6.x",
     "eslint-plugin-react": "^7.x",
-    "eslint-plugin-react-hooks": "^2.x",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "http-proxy-middelware": "^0.0.1-security",
+    "jest-diff": "26.6.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.1.0",
     "react-scripts": "^4.0.2",
-    "web-vitals": "^1.0.1",
-    "jest-diff": "26.6.1"
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

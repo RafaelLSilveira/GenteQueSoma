@@ -5,8 +5,10 @@ html {
 }
 
 .content {
-  position: absolute;
-  left: 40%;
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
 }
 
 .app {
@@ -33,7 +35,7 @@ html {
 }
 
 .icon {
-  margin: 5px;
+  margin: auto;
   font-size: 25px;
   cursor: pointer;
   float: right;
