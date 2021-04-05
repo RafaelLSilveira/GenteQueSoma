@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import ListItems from '../Components/ListItems'
 import useInput from '../Hooks/useInput'
+import { MdCancel, MdCheck } from 'react-icons/md'
 
 import './styles.css'
 
@@ -71,16 +71,18 @@ function Application() {
       <button className="button" onClick={handleAdd}>Adicionar</button>
       <ul className="list">
         {
-          listNames.map((item) => {
-            return (
-              <ListItems
-                key={item.id}
-                item={item}
-                handleDelete={handleDelete}
-                handleComplete={handleComplete}
-              />
-            )
-          })
+          listNames.map((item) => (
+            <li key={item.id}>
+              <span className={`listTitle ${item.completed ? 'listItemCompleted' : ''}`}>{item.title}</span>
+              {
+                !item.completed
+                  ? <MdCheck className="icon completeIcon" onClick={() => handleComplete(item.id)} />
+                  : null
+              }
+              <MdCancel className="icon cancelIcon" onClick={() => handleDelete(item.id)} />
+              <br /><br />
+            </li>
+          ))
         }
       </ul>
       <label className="count">N° de Registros: {listCount}</label>

@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@typescript-eslint/eslint-plugin": "^2.x",
     "@typescript-eslint/parser": "^2.x",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "react-notifications-component": "^3.1.0",
     "babel-eslint": "10.x",
     "eslint": "^7.11.0",
     "eslint-config-react-app": "^6.0.0",
@@ -17,7 +19,6 @@
     "eslint-plugin-react": "^7.x",
     "eslint-plugin-react-hooks": "^4.2.0",
     "http-proxy-middelware": "^0.0.1-security",
-    "jest-diff": "26.6.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.1.0",
@@ -32,8 +33,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
