@@ -7,8 +7,10 @@ html {
 .content {
   position: fixed;
   left: 50%;
+  height: 90%;
   -webkit-transform: translate(-50%);
   transform: translate(-50%);
+  text-align: center;
 }
 
 .app {
@@ -19,6 +21,14 @@ html {
 
 .list {
   list-style: none;
+}
+
+.listMultiline {
+  margin: 0;
+  left: 50%;
+  overflow-y: auto;
+  overflow-x: auto;
+  height: 90%;
 }
 
 .button {
@@ -68,7 +78,6 @@ html {
 }
 
 .count {
-  position: absolute;
   float: left;
 }
 
@@ -80,4 +89,19 @@ html {
   border: 2px solid var(--input-border);
   border-radius: 4px;
   width: 100%;
+}
+
+.listloader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
